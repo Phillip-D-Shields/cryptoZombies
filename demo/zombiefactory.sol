@@ -3,12 +3,18 @@ pragma solidity >=0.5.0 <0.6.0;
 import "./ownable.sol";
 import "./safemath.sol";
 
+/**
+* @title ZombieFactory
+* @dev The ZombieFactory contract is ownable and is mostly responsible for the creation of the total zombies array and individual zombies.  
+*/
+
 contract ZombieFactory is Ownable {
 
   using SafeMath for uint256;
   using SafeMath32 for uint32;
   using SafeMath16 for uint16;
 
+  // create an event
   event NewZombie(uint zombieId, string name, uint dna);
 
   uint dnaDigits = 16;
